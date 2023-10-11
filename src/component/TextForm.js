@@ -12,13 +12,17 @@ export default function TextForm(props) {
     let newtext = text.toLocaleUpperCase();
     // here i changed the value of text to uppercase on click 
     setText(newtext);
+    // for using App function i have to use before props or define into Alert also which is in app.js file also
+    props.showAlert("Sucess","text is Converted into Upper Case ")
   }
   const handleLoclick =()=>{
     let newtext = text.toLocaleLowerCase();
     setText(newtext);
+    props.showAlert("Sucess","text is Converted into Lower Case ")
   }
   const handleToClear = () => {
     setText("");
+    props.showAlert("Sucess","text is clear ")
   }
   const handleOnchange = (event) => {
     // event(instead of event anything can be) handling update the value of text on change
