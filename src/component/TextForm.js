@@ -43,7 +43,8 @@ export default function TextForm(props) {
              <button className="btn btn-primary mx-2 my-1" onClick={handleToClear}>Clear Text</button>
              <div className="container my-3">
               <h2>Text summary</h2>
-              <p>{text.split(" ").length} words , {text.length} Characters</p>
+              {/* this is used to calculate length of text */}
+              <p>{text.split(" ").filter((element)=>{return element.length !==0}).length} words , {text.length} Characters</p>
               <p>{0.008 * text.split(" ").length} minutes to read this paragraph</p>
               <h2>Preview</h2>
               <p>{text.length>0?text:"Enter your text to preview"}</p>
