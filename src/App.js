@@ -30,7 +30,7 @@ function App() {
     if (mode === 'light') {
       setmode('dark');
       document.body.style.backgroundColor = "rgb(30 27 71)" // bg color change when button click
-      showAlert("Succes", "Dark mode is enable") // this is for alert
+      showAlert("Succes", "Dark mode is on") // this is for alert
       document.title = "TextUtils-Dark Mode" // this is used to change in icon name
       // we can use lower fucntion for frequently change icon
       // setInterval(()=>{
