@@ -38,14 +38,15 @@ export default function TextForm(props) {
                <label htmlFor="myBox"  className="form-label">Example textarea</label>
                <textarea className="form-control" value={text} style={{backgroundColor:props.mode==='dark'?'#47474d':'white',color:props.mode==='dark'?'white':'black'}} onChange={handleOnchange} id="myBox" rows="8"></textarea>
              </div> 
-             <button className="btn btn-primary mx-2 my-1" onClick={handleUpclick}>UpperCase</button>
-             <button className="btn btn-primary mx-2 my-1" onClick={handleLoclick}>LowerCase</button>
-             <button className="btn btn-primary mx-2 my-1" onClick={handleToClear}>Clear Text</button>
+             {/* disabled used for if text size is zero then button will not work */}
+             <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleUpclick}>UpperCase</button>
+             <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleLoclick}>LowerCase</button>
+             <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleToClear}>Clear Text</button>
              <div className="container my-3">
               <h2>Text summary</h2>
               {/* this is used to calculate length of text */}
               <p>{text.split(" ").filter((element)=>{return element.length !==0}).length} words , {text.length} Characters</p>
-              <p>{0.008 * text.split(" ").length} minutes to read this paragraph</p>
+              <p>{0.008 * text.split(" ").filter((element)=>{return element.length !==0}).length} minutes to read this paragraph</p>
               <h2>Preview</h2>
               <p>{text.length>0?text:"Enter your text to preview"}</p>
           </div>
